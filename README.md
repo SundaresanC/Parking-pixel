@@ -59,8 +59,8 @@ python MyApp.py
 
 This will start the Parking Pixels application, where you can select video files, define parking regions, and detect vacant slots in real-time.
 
-Usage
-Select Video: Choose a video file that contains the parking area.
-Set Region: Define the parking slots within the video frame.
-Detect: Start the detection process to identify vacant parking spots.
-Reset: Reset the application to select a new video or region.
+## Usage
+- Select Video: Choose a video file that contains the parking area.
+- Set Region: Define the parking slots within the video frame.
+- Detect: Start the detection process to identify vacant parking spots.
+- Reset: Reset the application to select a new video or region.
