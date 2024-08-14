@@ -1,0 +1,69 @@
+<MyWidget>:
+    orientation: 'vertical'
+
+    video: video_widget.__self__
+    Video:
+        id: video_widget
+        source: 'background.mp4'
+        options: {'fit_mode': 'contain'}
+        state: 'play'
+        options: {'eos': 'loop'}
+        allow_stretch: True
+        size_hint: (1, 1)
+
+    Label:
+        id: title_label
+        text: 'PARKING PIXELS'
+        font_size: '60sp'
+        bold: True
+        color: (1, 1, 0, 1)  # Yellow color
+        pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        halign: 'center'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (None, None)
+        size: (300, 400)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        MDRoundFlatButton:
+            id: btn1
+            text: 'Select Video'
+            size_hint: (1, 0.1)
+            md_bg_color: (1, 1, 0, 1)  # Yellow color
+            text_color: (0, 0, 0, 1)  # Black text color
+            font_size: '20sp'
+            on_press: root.select_video()
+
+        MDRoundFlatButton:
+            id: btn2
+            text: 'Set Region'
+            size_hint: (1, 0.1)
+            md_bg_color: (1, 1, 0, 1)  # Yellow color
+            text_color: (0, 0, 0, 1)  # Black text color
+            font_size: '20sp'
+            opacity: 0
+            disabled: True
+            on_press: root.set_region()
+
+        MDRoundFlatButton:
+            id: btn3
+            text: 'Detect'
+            size_hint: (1, 0.1)
+            md_bg_color: (1, 1, 0, 1)  # Yellow color
+            text_color: (0, 0, 0, 1)  # Black text color
+            font_size: '20sp'
+            opacity: 0
+            disabled: True
+            on_press: root.detect()
+
+        MDRoundFlatButton:
+            id: btn4
+            text: 'Reset'
+            size_hint: (1, 0.1)
+            md_bg_color: (1, 1, 0, 1)  # Yellow color
+            text_color: (0, 0, 0, 1)  # Black text color
+            font_size: '20sp'
+            opacity: 0
+            disabled: True
+            on_press: root.reset_process()

@@ -1,0 +1,60 @@
+<MyWidget>:
+    orientation: 'vertical'
+    id: Parking Pixels
+    markup: True
+    video: video_widget.__self__
+    Video:
+        id: video_widget
+        source: 'background.mp4'
+        options: {'fit_mode': 'contain'}
+        state: 'play'
+        options: {'eos': 'loop'}
+        allow_stretch: True
+        size_hint: (1, 1)
+
+    Label:
+        id: title_label
+        markup: True
+        text: '[font=times]PARKING \nPIXELS[/font]'
+        font_size: '70sp'
+        bold: True
+        color: (1, 1, 0, 1)  # Yellow color
+        pos_hint: {'center_x': 0.5, 'center_y': 0.7}
+        halign: 'center'
+
+    MDRoundFlatButton:
+        id: btn1
+        text: '[font=times]Select Video[/font]'
+        size_hint: (0.2, 0.05)
+        md_bg_color: (1, 1, 0, 1)  # Yellow color
+        text_color: (0, 0, 0, 1)  # Black text color
+        font_size: '20sp'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        background_color: (1,0,0,1)
+        on_press: root.select_video()
+
+    MDRoundFlatButton:
+        id: btn2
+        text: '[font=times]Add Region[/font]'
+        size_hint: (0.2, 0.05)
+        md_bg_color: (1, 1, 0, 1)  # Yellow color
+        text_color: (0, 0, 0, 1)  # Black text color
+        font_size: '20sp'
+        opacity: 0
+        disabled: True
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        on_press: root.set_region()
+
+    MDRoundFlatButton:
+        id: btn3
+        text: '[font=times]Detect[/font]'
+        size_hint: (0.2, 0.05)
+        md_bg_color: (1, 1, 0, 1)  # Yellow color
+        text_color: (0, 0, 0, 1)  # Black text color
+        font_size: '20sp'
+        opacity: 0
+        disabled: True
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        on_press: root.detect()
+
+
